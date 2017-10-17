@@ -1,0 +1,15 @@
+galaxy_info:
+  author: Fabricio Boreli Ferreira
+  description: System and Network Administrator
+  company:
+  license: MIT
+  min_ansible_version: 2.4
+  platforms:
+  - name: Debian
+    versions:
+    - 8
+    - 9
+  
+  galaxy_tags: []
+  
+dependencies: []
