@@ -1,0 +1,9 @@
+---
+enable_conntrackd: true
+config_conntrackd: true
+conntrackd_local_sync_ipv4: "192.168.0.2"
+conntrackd_remote_sync_ipv4: "192.168.0.3"
+conntrackd_sync_int: "eth1"
+conntrackd_ignore_addresses:
+  - "192.168.20.10"
+  - '{{ conntrackd_local_sync_ipv4 }}'

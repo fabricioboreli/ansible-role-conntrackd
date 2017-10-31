@@ -1,0 +1,10 @@
+---
+- name: ansible-conntrackd | Copy the configuration file to the server
+  template: 
+    src: "conntrackd.conf.j2"
+    dest: "/etc/conntrackd/conntrackd.conf"
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+  notify: ansible-conntrackd | Restart the daemon

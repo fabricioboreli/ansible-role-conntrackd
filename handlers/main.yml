@@ -1,0 +1,5 @@
+---
+- name: ansible-conntrackd | Restart the daemon
+  service:
+    name: conntrackd
+    state: restarted

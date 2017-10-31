@@ -1,0 +1,23 @@
+---
+- name: ansible-conntrackd | Install packages
+  apt:
+    update_cache: yes
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - conntrack
+    - conntrackd
+
+- block:
+  - name: ansible-conntrackd | Ajust the systemd unit file
+    lineinfile:
+      path: "/lib/systemd/system/conntrackd.service"
+      line: 'Type=notify'
+      state: absent
+
+  - name: ansible-conntrackd | Reload systemd
+    systemd:
+      name: conntrackd
+      enabled: yes
+      daemon_reload: yes
+  when: ansible_distribution_major_version == "9"
