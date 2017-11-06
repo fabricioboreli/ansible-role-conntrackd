@@ -3,4 +3,3 @@
   when: ansible_os_family == "Debian" and ansible_lsb.major_release|int >= 8
 
 - include_tasks: config_conntrackd.yml
-  when: enable_conntrackd and config_conntrackd
